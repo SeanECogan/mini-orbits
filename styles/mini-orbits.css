@@ -1,0 +1,40 @@
+.mini-orbits {
+    background-color: #121212;
+    cursor: none;
+}
+
+#mini-orbits-instructions {
+    display: block;
+    
+    cursor: none;
+
+    font-family: 'VT323', monospace;
+
+    border: 1px solid #EEE;
+    border-radius: 3px;
+
+    max-width: 300px;
+    position: fixed;
+    top: 10;
+    left: 10;
+    padding: 5px;
+
+    background-color: rgba(50, 50, 50, 0.5);
+    color: #EEE;
+}
+
+#mini-orbits-instructions h3,h5,p {
+    margin: 0px;
+}
+
+#mini-orbits-instructions h3 {
+    margin-bottom: 5px;
+}
+
+#mini-orbits-instructions h5 {
+    margin-bottom: 10px;
+}
+
+#mini-orbits-instructions .controls-label {
+    font-weight: bold;
+}

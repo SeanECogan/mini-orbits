@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>MiniOrbits</title>
+        <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+        <link rel="stylesheet" href="styles/mini-orbits.css">
+
+        <style>
+            body {
+                margin: 0px;
+            }
+        </style>
+
+        <script type="text/javascript" src="scripts/mini-orbits.js"></script>
+        <script type="text/javascript" src="scripts/objects/attractor.js"></script>
+        <script type="text/javascript" src="scripts/objects/repeller.js"></script>
+        <script type="text/javascript" src="scripts/objects/satellite.js"></script>
+        <script type="text/javascript" src="scripts/objects/star.js"></script>
+
+        <script type="text/javascript">
+            window.addEventListener("resize", function() {
+                resizeCanvas();                
+            });
+
+            window.addEventListener("load", function() {
+                resizeCanvas();
+                initializeMiniOribts();                
+            });
+
+            function resizeCanvas() {
+                var height = window.innerHeight;
+                var width = window.innerWidth;
+
+                var miniOrbitsCanvas = document.getElementById("mini-orbits");
+                miniOrbitsCanvas.height = height;
+                miniOrbitsCanvas.width = width;
+            }
+
+            function initializeMiniOribts() {
+                var simulation = new MiniOrbits("mini-orbits", {
+                    tickLength: 33,
+                    twinkle: true
+                });
+            }            
+        </script>
+    </head>
+    <body>
+        <canvas id="mini-orbits">
+        </canvas>
+    </body>
+</html>
