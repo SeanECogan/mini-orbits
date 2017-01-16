@@ -9,7 +9,7 @@ satellites towards themselves, and satellites are acted upon by repellers and at
 You will first need to add references to `mini-orbits.css`, `mini-orbits.js`, `attractor.js`, `repeller.js`, `satellite.js`, and 
 `star.js`.
 
-```
+```html
 <link rel="stylesheet" href="styles/mini-orbits.css">
 
 <script type="text/javascript" src="scripts/mini-orbits.js"></script>
@@ -23,14 +23,14 @@ Alternatively, you could bundle the JavaScript files and simply reference that b
 
 Regardless, once you have referenced the script and style files, you will need an HTML canvas element with an ID:
 
-```
+```html
 <canvas id="mini-orbits">
 </canvas>
 ```
 
 Then, you simply need to create a new instance of mini-objects that targets that canvas:
 
-```
+```javascript
 var simulation = new MiniOrbits("mini-orbits");
 ```
 
@@ -40,7 +40,7 @@ on how to use mini-orbits itself will appear in the canvas, as well.
 # Options
 When initializing mini-orbits, you also have two options available to you through an optional options object:
 
-```
+```javascript
 var simulation = new MiniOrbits("mini-orbits", {
                           tickLength: 33,
                           twinkle: true
