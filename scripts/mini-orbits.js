@@ -1,4 +1,4 @@
-var MiniOrbits = function(id, options) {  
+var MiniOrbits = function(id, options) {
     // ** Public Methods **
     this.addAttractor = addAttractor;
 
@@ -15,11 +15,11 @@ var MiniOrbits = function(id, options) {
 
     var currentMass = 5;
 
-    var attractors = new Array();
-    var repellers = new Array();
-    var satellites = new Array();
+    var attractors = [];
+    var repellers = [];
+    var satellites = [];
 
-    var stars = new Array();
+    var stars = [];
     initializeStars();
 
     // Add event listeners.
@@ -29,6 +29,9 @@ var MiniOrbits = function(id, options) {
     canvas.addEventListener("wheel", handleCanvasMouseWheel);
 
     window.addEventListener("keyup", handleWindowKeyup);
+
+    var resizeEvent;
+    window.addEventListener("resize", handleResize);
 
     // Intialize optional parameters.
     var tickLength = 20;
@@ -100,6 +103,8 @@ var MiniOrbits = function(id, options) {
     }
 
     function initializeStars() {
+        stars = [];
+
         var maxHeight = canvas.height;
         var maxWidth = canvas.width;
 
@@ -326,5 +331,13 @@ var MiniOrbits = function(id, options) {
         if (e.keyCode == 72) {
             toggleControls();
         }
+    }
+
+    function handleResize() {
+        if (resizeEvent) {
+            clearTimeout(resizeEvent);
+        }
+
+        resizeEvent = setTimeout(initializeStars(), 100);
     }
 }
